@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyboard</title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <h1>Entrega: Recebendo eventos do teclado</h1>
+    <div id="box">
+        <img src="./download.png" alt="Kenzie">
+    </div>
+
+    <div id="boxdestino">
+        
+    </div>
+<script>
+    
+    let boxTop = 200;
+    let boxLeft = 200;
+
+        'use strict';
+        
+        document.addEventListener('keydown', (x) => {
+          const keyName = x.key;
+          if(keyName === "ArrowUp" && boxTop !== 0){
+              boxTop = boxTop - 10;
+          }
+          if(keyName === "ArrowDown"){
+              boxTop = boxTop + 10;
+          }
+          if(keyName === "ArrowLeft" && boxLeft !== 0){
+            boxLeft = boxLeft - 10;
+          }
+          if(keyName === "ArrowRight"){
+            boxLeft = boxLeft + 10;
+          }
+          document.getElementById("box").style.top = boxTop + "px";
+          document.getElementById("box").style.left = boxLeft + "px";
+
+          console.log(boxTop);
+          console.log(boxLeft);
+          /* alert('keydown event\n\n' + 'key: ' + keyName); */
+        });
+
+    
+        
+</script>
+</body>
+</html>
